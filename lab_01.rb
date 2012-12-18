@@ -42,10 +42,25 @@ dealer_hand_total = rand(12) + 10
 
 # If the player _does_ take another card, this will be the value of
 # that card.
-next_card_value = rand(10) + 2
+
 
 
 # ... your code here ...
+
+
+
+puts "Do you want to stand or hit?"
+answer = gets.chomp
+
+if answer == "stand"
+	puts "You've chosen to stand"
+elsif answer == "hit" 
+	next_card_value = rand(10) + 2
+	current_hand_total = next_card_value + current_hand_total
+	puts "You took another card and you scored #{current_hand_total}"
+else
+	puts "that's not allowed"
+end
 
 
 # Part 3
@@ -58,6 +73,13 @@ next_card_value = rand(10) + 2
 
 # ... your code here ...
 
+if current_hand_total > dealer_hand_total
+	puts "You win. You scored #{current_hand_total} + the dealer got #{dealer_hand_total}"
+elsif (dealer_hand_total >= current_hand_total) && current_hand_total < 21
+	puts "You lose. You scored #{current_hand_total} + the dealer got #{dealer_hand_total}"
+else
+	puts "You lose."
+end
 
 #### IF YOU GET REALLY STUCK ####
 

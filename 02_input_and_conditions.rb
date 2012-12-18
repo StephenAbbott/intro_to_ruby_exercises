@@ -2,7 +2,11 @@
 #    age. Assign both of these to variables. Display the name of the
 #    user and the year they were born in.
 
-
+puts "What is your name?"
+name = gets.chomp
+puts "What is your age?"
+age = gets.chomp
+puts "Your name is #{name} and you were born in #{2012 - age.to_i}."
 
 # 2. Use an if statement to output whether a user has a long or short name,
 #    given the name they entered for task 1. Use your_variable.size to
@@ -11,7 +15,12 @@
 #    letters or longer, display "You have a long name". Otherwise,
 #    display "Your name is average sized".
 
-
+if name.size <= 3
+	puts "You have a short name"
+elsif name.size >= 7
+	puts "You have a long name"
+else puts "Your name is average sized"
+end
 
 # 3. Ask the user to input a degree value from 0 to 359. Assuming 0 is
 #    North, use "case" and "when" to output whether the degrees point
